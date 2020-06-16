@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  turnserver:
+    image: instrumentisto/coturn
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - ./turnserver.conf:/etc/coturn/turnserver.conf
+      - /etc/letsencrypt:/etc/letsencrypt
+
